@@ -1,0 +1,51 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif; /* Serif font for text */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc; /* Creme background */
+    color: #3b2f2f; /* Dark brown text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header .logo {
+    font-family: 'Limelight', cursive;
+    font-size: 24px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.upload-container {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.results-container {
+    max-width: 800
