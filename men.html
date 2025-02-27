@@ -192,8 +192,30 @@
             const brand = document.getElementById("brand").value;
             const fit = document.getElementById("fit").value;
 
+            // Send data to the backend
+            const response = await fetch('/measure', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    height: height,
+                    bodyType: bodyType,
+                    clothingType: clothingType,
+                    brand: brand,
+                    fit: fit,
+                    captured_image: capturedImageData
+                }),
+            });
+
+            const result = await response.json();
+        
+
+            
+
             // Redirect to result.html with query parameters
             window.location.href = `result.html?height=${height}&bodyType=${bodyType}&clothingType=${clothingType}&brand=${brand}&fit=${fit}`;
+
         });
     </script>
 </body>
