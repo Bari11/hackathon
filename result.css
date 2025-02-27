@@ -1,28 +1,37 @@
-body {
-    font-family: 'Georgia', serif; /* Serif font for text */
+* {
     margin: 0;
     padding: 0;
-    background: #f5f5dc; /* Creme background */
-    color: #3b2f2f; /* Dark brown text */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Pistilli Roman', sans-serif; /* Apply Pistilli Roman globally */
 }
 
-.results-container {
+body {
+    background: linear-gradient(125deg, #0A0016, #210724); /* Pastel Purple to Pastel Yellow */
+    color: #333;
     text-align: center;
-    background: white; /* White background for the card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: flex-start; /* Changed to flex-start to allow footer to be pushed down */
+}
+.results-container {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(200, 200, 200, 0.10);
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+    backdrop-filter: blur(20px);
+    border: 3px solid #A1045A;
+    margin-top: 150px;
 }
 
 .results-title {
     font-size: 48px; /* Increased size */
     margin-bottom: 20px;
-    color: #3b2f2f; /* Dark brown */
+    color: #A1045A; /* Dark brown */
     opacity: 0;
     font-family: 'Limelight';
     animation: slideDown 0.8s ease-in-out forwards;
@@ -38,21 +47,19 @@ body {
 
 .measurements, .recommended-size {
     text-align: left;
+    color: #800080;
 }
 
 .measurements-heading {
     font-size: 32px; /* Increased size */
     margin-bottom: 20px;
-    color: #3b2f2f; /* Dark brown */
+    color: #800080; /* Dark brown */
     opacity: 0;
     animation: fadeIn 0.8s ease-in-out forwards;
     transition: transform 0.3s ease-in-out;
 }
 
-.measurements-heading:hover {
-    transform: scale(1.05); /* Hover effect */
-    color: #8b7355; /* Light brown on hover */
-}
+
 
 .measurements ul {
     list-style: none;
@@ -62,16 +69,13 @@ body {
 .measurements ul li {
     font-size: 20px; /* Increased size */
     margin-bottom: 15px;
-    color: #3b2f2f; /* Dark brown */
+    color: #FFFF; 
     opacity: 0;
     animation: fadeIn 0.8s ease-in-out forwards;
     transition: all 0.3s ease-in-out;
 }
 
-.measurements ul li:hover {
-    transform: scale(1.05); /* Hover effect */
-    color: #8b7355; /* Light brown on hover */
-}
+
 
 .measurements ul li span {
     font-weight: bold;
@@ -81,40 +85,42 @@ body {
     font-size: 48px;
     font-weight: bold;
     color: white;
-    background: linear-gradient(135deg, #3b2f2f, #8b7355); /* Dark brown to light brown gradient */
+    background: rgba(200, 200, 200, 0.10); 
     width: 120px; /* Increased size */
     height: 120px; /* Increased size */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    border: 3px solid #A1045A;
     opacity: 0;
-    animation: popIn 0.8s ease-in-out forwards;
+    animation: popIn 0.5s ease-in-out forwards;
     transition: transform 0.3s ease-in-out;
 }
+
 
 .size-box:hover {
     transform: scale(1.1); /* Hover effect */
 }
 
+/* Button */
 .animated-button {
-    width: 220px; /* Increased size */
-    background: linear-gradient(135deg, #3b2f2f, #8b7355); /* Dark brown to light brown gradient */
+    width: 220px;
+    background: linear-gradient(0deg, #800080, #0000, #800080);
     color: white;
-    padding: 15px 30px; /* Increased padding */
-    font-size: 22px; /* Increased size */
+    padding: 12px 24px;
+    font-size: 18px;
     font-weight: bold;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out forwards;
     transition: all 0.3s ease-in-out;
+}
+button:hover {
+    border-color: #d81b60;
 }
 
 .animated-button:hover {
-    background: linear-gradient(135deg, #8b7355, #3b2f2f); /* Light brown to dark brown gradient on hover */
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 /* Animations */
