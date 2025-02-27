@@ -14,47 +14,37 @@
             <div class="measurements">
                 <h2 class="measurements-heading">Your Measurements</h2>
                 <ul>
-                    <li><span>Shoulder Width:</span> <span id="shoulder">38 cm</span></li>
-                    <li><span>Bust Size:</span> <span id="bust"></span></li>
-                    <li><span>Waist Size:</span> <span id="waist"></span></li>
-                    <li><span>Hips Size:</span> <span id="hips"></span></li>
+                    <li><span>Shoulder Width:</span> <span id="shoulder">{{ measurements.shoulder }} cm</span></li>
+                    <li><span>Bust Size:</span> <span id="bust">{{ measurements.bust }} cm</span></li>
+                    <li><span>Waist Size:</span> <span id="waist">{{ measurements.waist }} cm</span></li>
+                    <li><span>Hips Size:</span> <span id="hips">{{ measurements.hips }} cm</span></li>
                 </ul>
             </div>
             <div class="recommended-size">
                 <h2>Recommended Size</h2>
-                <div class="size-box" id="size-box">M</div>
+                <div class="size-box" id="size-box">{{ size }}</div>
             </div>
         </div>
         <button class="animated-button" onclick="goBack()">Back to Home</button>
     </div>
 
     <script>
-        // Example data (replace with actual data from backend)
-        const measurements = {
-            shoulder: "38 cm",
-            bust: "90 cm",
-            waist: "75 cm",
-            hips: "95 cm",
-            size: "M"
-        };
-
-        // Populate the results with data
-        document.getElementById("shoulder").textContent = measurements.shoulder;
-        document.getElementById("bust").textContent = measurements.bust;
-        document.getElementById("waist").textContent = measurements.waist;
-        document.getElementById("hips").textContent = measurements.hips;
-        document.getElementById("size-box").textContent = measurements.size;
-
-        // Add sequential animations
-        const elements = document.querySelectorAll('.results-title, .measurements-heading, .measurements ul li, .recommended-size h2, .size-box, .animated-button');
-        elements.forEach((element, index) => {
-            element.style.animationDelay = `${index * 0.3}s`;
-        });
-
-        // Function to go back to the home page
-        function goBack() {
-            window.location.href = "index.html"; // Replace with your home page URL
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/api/get_measurements')  
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("shoulder").textContent = data.shoulder;
+                document.getElementById("bust").textContent = data.bust;
+                document.getElementById("waist").textContent = data.waist;
+                document.getElementById("hips").textContent = data.hips;
+                document.getElementById("size-box").textContent = data.size;            
+        })
+        .catch(error => console.error("Error fetching measurements:", error));
+    });
+    // Function to go back to the home page
+    function goBack() {
+        window.location.href = "index.html"; // Replace with your home page URL
+    }
     </script>
 </body>
 </html>
