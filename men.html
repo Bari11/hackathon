@@ -10,12 +10,15 @@
 <body>
     <!-- Navigation Bar -->
     <header>
-        <div class="logo">👕 Pic2Fit</div>
+        <div class="logo">
+            <img src="https://github.com/Bari11/hackathon/raw/main/image/AI-removebg-preview.png"  class="logo-img">
+            <span>Pic2Fit</span>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="women.html">Women</a></li>
-                <li><a href="men.html">Men</a></li>
+                <li><a href="men.html" class="active">Men</a></li>
                 <li><a href="type.html">FitCheck</a></li>
             </ul>
         </nav>
@@ -30,8 +33,10 @@
                         <!-- Image Capture Button -->
                         <div class="scan-section">
                             <button class="image-button" type="button" onclick="openCamera()">
-                                <img src="https://github.com/Tirthanaik14/UpsideCoders/raw/main/images/scan-icon.png" alt="Scan Icon" class="scan-icon">
-                                <span class="scan-label">Scan My Size</span>
+                                <div class="scan-content">
+                                    <img src="https://github.com/Bari11/hackathon/raw/main/image/camera.png" alt="Scan Icon" class="scan-icon">
+                                    <span class="scan-label">Scan My Size</span>
+                                </div> 
                             </button>
                         </div>
                         <!-- Camera Capture Elements -->
