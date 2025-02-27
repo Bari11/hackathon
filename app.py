@@ -41,13 +41,7 @@ def measure():
     waist_size = bust_size * 0.9  # Example approximation
     hips_size = bust_size * 1.1  # Example approximation
 
-    size_chart = {
-        'XS': (30, 32),
-        'S': (33, 35),
-        'M': (36, 38),
-        'L': (39, 41),
-        'XL': (42, 44)
-    }
+   
 
     recommended_size = 'Unknown'
     for size, (min_bust, max_bust) in size_chart.items():
