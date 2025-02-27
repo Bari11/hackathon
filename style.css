@@ -23,7 +23,7 @@
 }
 
 body {
-    background: linear-gradient(125deg, #F2E8DB, #D4B6A2); /* Pastel Purple to Pastel Yellow */
+    background: linear-gradient(125deg, #0A0016, #210724); /* Pastel Purple to Pastel Yellow */
     color: #333;
     text-align: center;
     display: flex;
@@ -33,26 +33,42 @@ body {
     justify-content: flex-start; /* Changed to flex-start to allow footer to be pushed down */
 }
 
-/* Header & Navigation */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background: #9F7A66;
+    background: linear-gradient(0deg, #800080, #0000, #800080);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
+    height: 80px;
     top: 0;
     z-index: 100;
 }
 
-/* Apply Limelight font to the logo */
 .logo {
-    font-family: 'Limelight', cursive; /* Use Limelight font */
+    
+    align-items: center;
+    font-family: 'Limelight', cursive;
     font-size: 34px;
-    font-weight: bold; /* Make it bold */
-    color: #351D18; /* Slightly darker pastel purple */
+    font-weight: bold;
+    color: #A1045A;
+    display: flex;
+    
+}
+.logo span {
+    font-family: 'Limelight', cursive;
+    font-size: 28px; /* Adjust size as needed */
+    color: #A1045A;
+    letter-spacing: 2px;
+    
+}
+
+.logo-img {
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    
 }
 
 nav ul {
@@ -66,31 +82,31 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #351D18;
+    color: #FFFF;
     font-weight: 500;
     transition: all 0.3s ease-in-out;
-    position: relative; /* For underline effect */
+    position: relative;
 }
 
 nav ul li a:hover, .active {
-    color: #351D18; /* Keep the text color the same */
+    color: #A1045A;
 }
 
-/* Pink underline on hover */
 nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
-    background: #351D18; /* Pink color */
+    background: #A1045A;
     bottom: -5px;
     left: 0;
     transition: width 0.3s ease-in-out;
 }
 
 nav ul li a:hover::after, .active::after {
-    width: 100%; /* Full width underline on hover */
+    width: 100%;
 }
+
 
 /* Hero Section */
 .hero {
@@ -103,7 +119,7 @@ nav ul li a:hover::after, .active::after {
 
 .hero h1 {
     font-size: 3rem;
-    color: #6a5acd;
+    color: #A1045A;
     font-weight: bold; /* Make heading bold */
 }
 
@@ -123,36 +139,37 @@ nav ul li a:hover::after, .active::after {
     height: 350px;
     position: relative;
     transform-style: preserve-3d;
-    transform: perspective(1000px);
-    animation: gallery 10s linear infinite;
+    
+    animation: animate 20s linear infinite;
     padding-top: 115px; /* Adjust this if needed */
     padding-left: 10px; /* Adjust this if needed */
-    transform-origin: center; /* Ensure rotation is centered */
 }
 
 .container span {
     position: absolute;
     width: 100%;
     height: 100%;
+    transform-origin: center;
     transform-style: preserve-3d;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    -webkit-box-reflect: below -310px linear-gradient(transparent, rgba(161, 4, 90, 0.4));
 }
 
 .container span img {
     width: 200px;
     height: 200px;
     border-radius: 10px;
-    border: 6px ridge #ccc;
+    border: 6px ridge #A1045A;
     object-fit: cover;
     
 }
 
-@keyframes gallery {
+@keyframes animate {
     0% {
-        transform: perspective(1000px) rotateY(0deg);
+        transform: perspective(1200px) rotateY(0deg);
     }
     100% {
-        transform: perspective(1000px) rotateY(-360deg);
+        transform: perspective(1200px) rotateY(360deg);
     }
 }
 
@@ -166,7 +183,7 @@ nav ul li a:hover::after, .active::after {
 
 .tagline h2 {
     font-size: 3.5rem;
-    color: #351D18; /* Match your theme color */
+    color: #A1045A; /* Match your theme color */
     font-weight: bold; /* Make it bold */
     font-family: 'Dancing Script', cursive; /* Use a cursive font */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
@@ -180,7 +197,7 @@ nav ul li a:hover::after, .active::after {
 
 .features h2 {
     font-size: 36px;
-    color: #351D18;
+    color: #A1045A;
     margin-top: 40px;
     margin-bottom: 40px;
     font-weight: bold; /* Make heading bold */
@@ -194,7 +211,7 @@ nav ul li a:hover::after, .active::after {
 }
 
 .card {
-    background: #9F7A66;
+    background: linear-gradient(0deg, #800080, #0000, #800080);
     padding: 20px;
     border-radius: 12px;
     width: 280px;
@@ -207,7 +224,7 @@ nav ul li a:hover::after, .active::after {
 }
 
 .card h3 {
-    color: #351D18;
+    color: #FFFF;
     margin-bottom: 10px;
     font-weight: bold; /* Make heading bold */
 }
@@ -219,7 +236,7 @@ nav ul li a:hover::after, .active::after {
 
 /* Footer */
 footer {
-    background: #9F7A66;
+    background: linear-gradient(0deg, #800080, #0000, #800080);
     padding: 15px;
     margin-top: 50px; /* Ensure there's space above the footer */
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
@@ -231,7 +248,7 @@ footer {
 
 footer p {
     font-size: 14px;
-    color: #351D18;
+    color: #A1045A;
 }
 
 .social-links {
